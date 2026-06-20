@@ -2,56 +2,45 @@
 // Cada chave corresponde a um atributo data-i18n no HTML.
 const I18N = {
   meta_description: {
-    pt: "Currículo de Diego Costa — Desenvolvedor de Software.",
-    en: "Diego Costa's résumé — Software Developer.",
+    pt: "Diego Costa — Desenvolvedor Full-Stack especializado em Craft CMS.",
+    en: "Diego Costa — Full-Stack Developer specialized in Craft CMS.",
   },
   skip_link: { pt: "Pular para o conteúdo", en: "Skip to content" },
-  role: { pt: "Desenvolvedor de Software", en: "Software Developer" },
+  role: { pt: "Desenvolvedor Full-Stack", en: "Full-Stack Developer" },
 
-  hero_title: { pt: "Desenvolvedor de Software", en: "Software Developer" },
+  hero_title: { pt: "Desenvolvedor Full-Stack", en: "Full-Stack Developer" },
   hero_tagline: {
-    pt: "Breve resumo profissional. Edite este texto com a sua descrição: stack principal, anos de experiência e o tipo de problema que você gosta de resolver.",
-    en: "Short professional summary. Edit this text with your own pitch: main stack, years of experience, and the kind of problems you enjoy solving.",
+    pt: "Como desenvolvedor full-stack, resolvo desafios complexos para construir sites e integrações rápidos, seguros e fáceis de usar.",
+    en: "As a full-stack developer, I tackle your most complex challenges to build websites and integrations that are fast, secure, and easy to use.",
   },
 
   about_title: { pt: "Sobre", en: "About" },
   about_body: {
-    pt: "Parágrafo sobre você. Substitua por um resumo de 3 a 5 linhas: sua trajetória, o que te motiva e onde quer chegar. Mantenha objetivo e direto.",
-    en: "A paragraph about you. Replace it with a 3–5 line summary: your background, what drives you, and where you want to go. Keep it concise.",
+    pt: "Desenvolvedor full-stack com 4 anos na Dative, focado no ecossistema Craft CMS (Sprig, Twig) no back-end e em Tailwind CSS + Alpine.js no front-end. Construo sites e integrações rápidos, seguros e fáceis de usar — da modelagem de dados e PHP/SQL até interfaces responsivas e bem acabadas.",
+    en: "Full-stack developer with 4 years at Dative, focused on the Craft CMS ecosystem (Sprig, Twig) on the back end and Tailwind CSS + Alpine.js on the front end. I build fast, secure, and easy-to-use websites and integrations — from data modeling and PHP/SQL to polished, responsive interfaces.",
   },
 
   experience_title: { pt: "Experiência", en: "Experience" },
-  exp1_role: { pt: "Cargo / Posição", en: "Job Title / Role" },
-  exp1_period: { pt: "Jan 2024 — Atual", en: "Jan 2024 — Present" },
-  exp1_org: { pt: "Empresa · Local", en: "Company · Location" },
+  exp1_role: { pt: "Desenvolvedor Full-Stack", en: "Full-Stack Developer" },
+  exp1_period: { pt: "2022 — Atual", en: "2022 — Present" },
+  exp1_org: { pt: "Dative", en: "Dative" },
   exp1_p1: {
-    pt: "Descreva uma conquista ou responsabilidade com impacto mensurável.",
-    en: "Describe an achievement or responsibility with measurable impact.",
+    pt: "Desenvolvo e mantenho sites full-stack em Craft CMS, modelando conteúdo e criando templates dinâmicos com Twig e Sprig.",
+    en: "Build and maintain full-stack websites on Craft CMS, modeling content and creating dynamic templates with Twig and Sprig.",
   },
   exp1_p2: {
-    pt: "Outra responsabilidade relevante, com tecnologias usadas.",
-    en: "Another relevant responsibility, with the technologies used.",
+    pt: "Construo front-ends responsivos e acessíveis com Tailwind CSS e Alpine.js, com foco em performance e usabilidade.",
+    en: "Develop responsive, accessible front-ends with Tailwind CSS and Alpine.js, focused on performance and usability.",
   },
   exp1_p3: {
-    pt: "Resultado obtido (números, melhorias, entregas).",
-    en: "Outcome achieved (numbers, improvements, deliverables).",
-  },
-  exp2_role: { pt: "Cargo / Posição", en: "Job Title / Role" },
-  exp2_period: { pt: "Jan 2022 — Dez 2023", en: "Jan 2022 — Dec 2023" },
-  exp2_org: { pt: "Empresa · Local", en: "Company · Location" },
-  exp2_p1: {
-    pt: "Responsabilidade ou projeto importante.",
-    en: "Key responsibility or project.",
-  },
-  exp2_p2: {
-    pt: "Tecnologias e ferramentas utilizadas no dia a dia.",
-    en: "Technologies and tools used day to day.",
+    pt: "Implemento integrações e lógica de back-end em PHP e SQL, com ambientes locais em Docker.",
+    en: "Implement integrations and back-end logic in PHP and SQL, running local environments with Docker.",
   },
 
   skills_title: { pt: "Habilidades", en: "Skills" },
-  skills_g1_title: { pt: "Linguagens", en: "Languages" },
-  skills_g2_title: { pt: "Frameworks & Ferramentas", en: "Frameworks & Tools" },
-  skills_g3_title: { pt: "Infra & Outros", en: "Infra & Others" },
+  skills_g1_title: { pt: "Craft CMS & Back-end", en: "Craft CMS & Back-end" },
+  skills_g2_title: { pt: "Front-end", en: "Front-end" },
+  skills_g3_title: { pt: "Ferramentas & Infra", en: "Tools & Infra" },
 
   education_title: { pt: "Formação", en: "Education" },
   edu1_course: { pt: "Curso / Graduação", en: "Degree / Course" },
@@ -71,8 +60,8 @@ function getInitialLang() {
     const saved = localStorage.getItem("lang");
     if (saved === "pt" || saved === "en") return saved;
   } catch (e) {}
-  const nav = (navigator.language || "pt").toLowerCase();
-  return nav.startsWith("en") ? "en" : "pt";
+  // Inglês é o idioma padrão (mercado de Craft CMS é majoritariamente fora do Brasil).
+  return "en";
 }
 
 function applyLang(lang) {
